@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>อ.วิรศักดิ์ แนะแนวการศึกษาต่อ | มหาวิทยาลัยพิษณุโลก</title>
+<meta name="description" content="แนะแนวการศึกษาต่อสำหรับนักศึกษาวัยทำงาน โดย อ.วิรศักดิ์ มหาวิทยาลัยพิษณุโลก — เริ่มบทที่สองของการศึกษาคุณวันนี้">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pridi:wght@300;400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.460.0"></script>
+<style>
+  :root{
+    --background:#FFFFFF;
+    --card:#FFFFFF;
+    --bg-accent:#163972;
+    --foreground:#0C1E38;
+    --muted:#5C7291;
+    --border:#D7DFEA;
+    --primary:#163972;
+    --secondary:#0C1E38;
+    --accent:#2E5C9C;
+    --font-heading:'Pridi', serif;
+    --font-body:'IBM Plex Sans Thai', sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    background:var(--background);
+    color:var(--foreground);
+    line-height:1.8;
+    word-break:break-word;
+    overflow-wrap:break-word;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;height:auto;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .en, .num, .kicker{letter-spacing:0.08em;}
+  h1,h2,h3,h4{font-family:var(--font-heading);font-weight:600;line-height:1.5;padding-top:0.15em;}
+  .container{max-width:1240px;margin:0 auto;padding:0 24px;}
+
+  /* ===== NAV ===== */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+    transition:all .35s ease;
+  }
+  header.scrolled{box-shadow:0 6px 24px rgba(12,30,56,0.08);}
+  .nav-wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 24px;
+    max-width:1240px;margin:0 auto;
+    transition:padding .3s ease;
+  }
+  header.scrolled .nav-wrap{padding:12px 24px;}
+  .logo{display:flex;flex-direction:column;line-height:1.2;}
+  .logo-main{font-family:var(--font-heading);font-size:1.35rem;font-weight:600;color:var(--primary);}
+  .logo-sub{font-size:0.62rem;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;margin-top:2px;}
+  nav.links{display:none;gap:32px;align-items:center;}
+  nav.links a{font-size:0.85rem;letter-spacing:0.03em;color:var(--foreground);padding:10px 0;position:relative;}
+  nav.links a::after{content:'';position:absolute;left:0;bottom:4px;width:0;height:2px;background:var(--primary);transition:width .3s ease;}
+  nav.links a:hover::after{width:100%;}
+  .nav-right{display:flex;align-items:center;gap:18px;}
+  .cta-btn{
+    background:var(--primary);color:#FFFFFF;
+    padding:0.85em 1.5em;border-radius:2px;
+    font-size:0.85rem;font-weight:500;letter-spacing:0.02em;
+    border:1px solid var(--primary);
+    display:inline-flex;align-items:center;gap:8px;
+    transition:all .3s ease;cursor:pointer;
+    min-height:44px;
+  }
+  .cta-btn:hover{background:#FFFFFF;color:var(--primary);}
+  .cta-btn.ghost{background:transparent;color:var(--primary);}
+  .cta-btn.ghost:hover{background:var(--primary);color:#FFFFFF;}
+  .lang-sw{
+    display:flex;align-items:center;gap:5px;
+    font-size:0.78em;color:var(--primary);
+    padding:8px;border-radius:2px;
+  }
+  .lang-sw svg{stroke:var(--primary);}
+  .hamburger{
+    display:flex;flex-direction:column;gap:5px;
+    background:none;border:none;cursor:pointer;
+    padding:10px;min-width:44px;min-height:44px;
+    align-items:center;justify-content:center;
+  }
+  .hamburger span{width:22px;height:2px;background:var(--foreground);display:block;transition:all .3s ease;}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-menu{
+    display:none;flex-direction:column;
+    background:var(--background);border-bottom:1px solid var(--border);
+    position:absolute;top:100%;left:0;right:0;
+    padding:8px 24px 24px;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{padding:14px 0;border-bottom:1px solid var(--border);font-size:0.95rem;}
+  .mobile-menu .cta-btn{margin-top:16px;justify-content:center;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    padding:56px 0 40px;
+    overflow:visible;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:32px;
+    align-items:start;
+    position:relative;
+  }
+  .hero-kicker{
+    display:flex;align-items:center;gap:10px;
+    font-size:0.72rem;color:var(--primary);
+    text-transform:uppercase;font-weight:600;
+    margin-bottom:22px;
+  }
+  .hero-kicker::before{content:'';width:28px;height:2px;background:var(--accent);display:inline-block;}
+  .hero h1{
+    font-size:2.5rem;
+    color:var(--foreground);
+    padding-top:0.25em;
+  }
+  .hero h1 em{
+    font-style:normal;color:var(--primary);
+    display:block;
+  }
+  .hero p.lead{
+    margin-top:24px;font-size:1.05rem;color:var(--muted);
+    max-width:46ch;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;}
+  .hero-actions .cta-btn{flex:1 1 auto;justify-content:center;}
+  .hero-visual{
+    position:relative;
+    margin-top:24px;
+  }
+  .hero-photo-frame{
+    position:relative;
+    border-radius:4px;
+    overflow:visible;
+  }
+  .hero-photo-frame img{
+    width:100%;height:420px;object-fit:cover;
+    border-radius:4px;
+    filter:grayscale(15%) contrast(1.05);
+  }
+  .ticket-tag{
+    position:absolute;left:-14px;bottom:-28px;
+    background:var(--primary);color:#fff;
+    padding:16px 18px;border-radius:2px;
+    box-shadow:0 16px 40px rgba(12,30,56,0.28);
+    max-width:230px;
+  }
+  .ticket-tag .row{display:flex;justify-content:space-between;font-size:0.68rem;color:#AFC2DE;text-transform:uppercase;margin-bottom:6px;}
+  .ticket-tag .dest{font-family:var(--font-heading);font-size:1.1rem;line-height:1.4;}
+  .platform-badge{
+    position:absolute;top:-18px;right:16px;
+    background:var(--background);
+    border:2px solid var(--primary);color:var(--primary);
+    width:64px;height:64px;border-radius:50%;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-family:var(--font-heading);
+    box-shadow:0 8px 24px rgba(12,30,56,0.15);
+  }
+  .platform-badge .n{font-size:1.3rem;font-weight:700;line-height:1;}
+  .platform-badge .l{font-size:0.5rem;letter-spacing:0.05em;margin-top:2px;}
+
+  /* ticker */
+  .ticker{
+    background:var(--foreground);color:#fff;
+    overflow:hidden;white-space:nowrap;
+    padding:12px 0;
+  }
+  .ticker-track{display:inline-block;padding-left:100%;animation:scroll-left 32s linear infinite;}
+  .ticker-track span{margin-right:48px;font-size:0.82rem;letter-spacing:0.04em;}
+  .ticker-track span::before{content:'—  ';color:var(--accent);}
+  @keyframes scroll-left{from{transform:translateX(0);}to{transform:translateX(-100%);}}
+
+  /* ===== STATS BAND ===== */
+  .stats-band{
+    background:var(--primary);color:#fff;
+    padding:64px 0;
+    position:relative;
+  }
+  .stats-grid{
+    display:grid;grid-template-columns:1fr;gap:36px;
+  }
+  .stat-item{border-top:1px solid rgba(255,255,255,0.25);padding-top:18px;}
+  .stat-item .num{font-family:var(--font-heading);font-size:2.6rem;font-weight:700;display:block;}
+  .stat-item .lbl{font-size:0.82rem;color:#C6D5E8;margin-top:6px;}
+
+  /* ===== SECTION GENERAL ===== */
+  section{padding:80px 0;}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-kicker{
+    font-size:0.72rem;color:var(--primary);text-transform:uppercase;font-weight:600;
+    display:flex;align-items:center;gap:10px;margin-bottom:16px;
+  }
+  .section-kicker::before{content:'';width:28px;height:2px;background:var(--accent);}
+  .section-head h2{font-size:2rem;color:var(--foreground);}
+  .section-head p{color:var(--muted);margin-top:16px;font-size:1rem;}
+
+  /* ===== DEPARTURE BOARD ===== */
+  .board{
+    border:1px solid var(--border);border-radius:4px;overflow:hidden;
+    background:var(--card);
+  }
+  .board-row{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:12px;
+    padding:22px 20px;
+    border-bottom:1px solid var(--border);
+    align-items:center;
+    transition:background .3s ease;
+  }
+  .board-row:last-child{border-bottom:none;}
+  .board-row:hover{background:var(--bg-accent);color:#fff;}
+  .board-row:hover .board-track, .board-row:hover .board-status, .board-row:hover .board-meta span{color:#fff;}
+  .board-track{
+    font-family:var(--font-heading);font-weight:700;font-size:1.1rem;
+    color:var(--primary);
+    background:rgba(22,57,114,0.06);
+    border-radius:2px;padding:8px 14px;min-width:76px;text-align:center;
+    transition:color .3s ease;
+  }
+  .board-row:hover .board-track{background:rgba(255,255,255,0.15);}
+  .board-name{font-family:var(--font-heading);font-size:1.15rem;font-weight:600;}
+  .board-meta{display:flex;flex-wrap:wrap;gap:16px;margin-top:8px;font-size:0.8rem;color:var(--muted);}
+  .board-meta span{transition:color .3s ease;}
+  .board-status{
+    justify-self:end;font-size:0.72rem;font-weight:600;color:var(--accent);
+    text-transform:uppercase;white-space:nowrap;
+    transition:color .3s ease;
+  }
+  .board-row-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+
+  /* ===== ABOUT ROW ===== */
+  .about-row{display:grid;grid-template-columns:1fr;gap:36px;align-items:center;}
+  .about-photo{position:relative;}
+  .about-photo img{width:100%;height:380px;object-fit:cover;border-radius:4px;filter:grayscale(20%);}
+  .about-photo .frame-line{
+    position:absolute;inset:16px -16px -16px 16px;
+    border:2px solid var(--primary);border-radius:4px;z-index:-1;
+  }
+  .quote{
+    font-family:var(--font-heading);font-size:1.4rem;color:var(--primary);
+    line-height:1.7;margin:20px 0;padding-left:20px;border-left:3px solid var(--accent);
+  }
+  .cred-list{list-style:none;margin-top:20px;}
+  .cred-list li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:0.92rem;color:var(--muted);align-items:flex-start;}
+  .cred-list li svg{flex-shrink:0;stroke:var(--primary);margin-top:3px;}
+
+  /* ===== TIMELINE STEPS ===== */
+  .steps{display:grid;grid-template-columns:1fr;gap:0;}
+  .step{
+    display:grid;grid-template-columns:auto 1fr;gap:20px;
+    padding:32px 0;border-top:1px solid var(--border);
+    position:relative;
+  }
+  .steps .step:last-child{border-bottom:1px solid var(--border);}
+  .step .step-num{
+    font-family:var(--font-heading);font-size:2.2rem;font-weight:700;color:var(--border);
+    transition:color .4s ease;
+  }
+  .step.in-view .step-num{color:var(--primary);}
+  .step h3{font-size:1.15rem;color:var(--foreground);}
+  .step p{color:var(--muted);margin-top:8px;font-size:0.92rem;max-width:56ch;}
+
+  /* ===== TESTIMONIALS ===== */
+  .test-scroll{
+    display:flex;gap:20px;overflow-x:auto;padding-bottom:16px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+  }
+  .test-scroll::-webkit-scrollbar{height:6px;}
+  .test-scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+  .test-card{
+    flex:0 0 82%;scroll-snap-align:start;
+    background:var(--bg-accent);color:#fff;
+    border-radius:4px;padding:32px 26px;
+    display:flex;flex-direction:column;gap:18px;
+  }
+  .test-card .stars{color:var(--accent);font-size:0.9rem;letter-spacing:2px;}
+  .test-card p.txt{font-size:0.98rem;line-height:1.85;color:#EAF0F8;}
+  .test-person{display:flex;align-items:center;gap:12px;margin-top:auto;}
+  .test-person img{width:48px;height:48px;border-radius:50%;object-fit:cover;}
+  .test-person .name{font-weight:600;font-size:0.9rem;}
+  .test-person .role{font-size:0.76rem;color:#AFC2DE;}
+
+  /* ===== FAQ ===== */
+  .faq-item{border-bottom:1px solid var(--border);}
+  .faq-q{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:22px 0;cursor:pointer;font-family:var(--font-heading);
+    font-size:1.05rem;color:var(--foreground);gap:16px;
+  }
+  .faq-q svg{flex-shrink:0;stroke:var(--primary);transition:transform .3s ease;}
+  .faq-item.open .faq-q svg{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+  .faq-a p{padding-bottom:22px;color:var(--muted);font-size:0.92rem;max-width:64ch;}
+
+  /* ===== CONTACT ===== */
+  .contact-section{background:var(--bg-accent);color:#fff;position:relative;overflow:hidden;}
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:40px;}
+  .contact-info-list{display:flex;flex-direction:column;gap:22px;margin-top:28px;}
+  .contact-info-item{display:flex;gap:16px;align-items:flex-start;}
+  .contact-info-item .ic{
+    width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.35);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .contact-info-item .t{font-size:0.72rem;color:#AFC2DE;text-transform:uppercase;margin-bottom:4px;}
+  .contact-info-item .v{font-size:1rem;}
+  .contact-form{background:#fff;border-radius:4px;padding:32px 24px;color:var(--foreground);}
+  .contact-form h3{color:var(--foreground);margin-bottom:6px;}
+  .contact-form p{color:var(--muted);font-size:0.88rem;margin-bottom:22px;}
+  .form-row{margin-bottom:16px;}
+  .form-row label{display:block;font-size:0.8rem;color:var(--muted);margin-bottom:6px;}
+  .form-row input, .form-row select{
+    width:100%;border:1px solid var(--border);border-radius:2px;
+    padding:12px 14px;font-family:var(--font-body);font-size:0.95rem;color:var(--foreground);
+    background:var(--background);
+  }
+  .form-row input:focus, .form-row select:focus{outline:2px solid var(--primary);outline-offset:1px;}
+  .contact-form .cta-btn{width:100%;justify-content:center;margin-top:8px;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--foreground);color:#fff;padding:56px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:1fr;gap:36px;margin-bottom:40px;}
+  .footer-col h4{font-family:var(--font-heading);font-size:1rem;margin-bottom:16px;color:#fff;}
+  .footer-col a{display:block;color:#B7C6DB;font-size:0.88rem;padding:6px 0;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;
+    display:flex;flex-direction:column;gap:12px;
+    font-size:0.78rem;color:#8FA4C2;
+  }
+  .socials{display:flex;gap:12px;}
+  .socials a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  /* ===== DESKTOP ===== */
+  @media(min-width:768px){
+    .container{padding:0 40px;}
+    nav.links{display:flex;}
+    .hamburger{display:none;}
+    .hero{padding:90px 0 60px;}
+    .hero-grid{grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;}
+    .hero h1{font-size:3.6rem;}
+    .hero-actions .cta-btn{flex:0 1 auto;}
+    .hero-photo-frame img{height:520px;}
+    .stats-grid{grid-template-columns:repeat(4,1fr);}
+    .about-row{grid-template-columns:0.85fr 1.15fr;}
+    .about-row.reverse{direction:rtl;}
+    .about-row.reverse > *{direction:ltr;}
+    .steps{grid-template-columns:repeat(4,1fr);}
+    .step{grid-template-columns:1fr;border-top:none;border-left:1px solid var(--border);padding:0 28px;}
+    .steps .step:last-child{border-bottom:none;}
+    .steps .step:first-child{border-left:none;}
+    .test-card{flex:0 0 33%;}
+    .contact-grid{grid-template-columns:0.9fr 1.1fr;}
+    .footer-grid{grid-template-columns:1.4fr repeat(3,1fr);}
+    .footer-bottom{flex-direction:row;justify-content:space-between;align-items:center;}
+    .section-head h2{font-size:2.5rem;}
+  }
+  @media(min-width:1024px){
+    .hero h1{font-size:4.4rem;}
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="nav-wrap">
+    <a href="#top" class="logo">
+      <span class="logo-main">อ.วิรศักดิ์</span>
+      <span class="logo-sub en">GUIDANCE · PHITSANULOK UNIV.</span>
+    </a>
+    <nav class="links">
+      <a href="#programs" data-lang-th="หลักสูตร" data-lang-en="Programs">หลักสูตร</a>
+      <a href="#about" data-lang-th="เกี่ยวกับผม" data-lang-en="About Me">เกี่ยวกับผม</a>
+      <a href="#steps" data-lang-th="ขั้นตอนสมัคร" data-lang-en="Process">ขั้นตอนสมัคร</a>
+      <a href="#faq" data-lang-th="คำถามที่พบบ่อย" data-lang-en="FAQ">คำถามที่พบบ่อย</a>
+      <a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-sw"><i data-lucide="globe" width="14" height="14"></i><span class="lang-sw__label">TH</span></div>
+      <a href="#contact" class="cta-btn" style="display:none" id="nav-cta" data-lang-th="นัดหมายปรึกษา" data-lang-en="Book a Session">นัดหมายปรึกษา</a>
+      <button class="hamburger" id="hamburger" aria-label="menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#programs" data-lang-th="หลักสูตร" data-lang-en="Programs">หลักสูตร</a>
+    <a href="#about" data-lang-th="เกี่ยวกับผม" data-lang-en="About Me">เกี่ยวกับผม</a>
+    <a href="#steps" data-lang-th="ขั้นตอนสมัคร" data-lang-en="Process">ขั้นตอนสมัคร</a>
+    <a href="#faq" data-lang-th="คำถามที่พบบ่อย" data-lang-en="FAQ">คำถามที่พบบ่อย</a>
+    <a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a>
+    <a href="#contact" class="cta-btn" data-lang-th="นัดหมายปรึกษา" data-lang-en="Book a Session">นัดหมายปรึกษา</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-kicker">
+          <span class="en" data-lang-th="แนะแนวการศึกษาต่อ" data-lang-en="CONTINUING EDUCATION GUIDANCE">แนะแนวการศึกษาต่อ</span>
+        </div>
+        <h1>
+          <span data-lang-th="บทที่สอง" data-lang-en="The Second Chapter">บทที่สอง</span>
+          <em data-lang-th="ของการศึกษาคุณ" data-lang-en="of Your Education">ของการศึกษาคุณ</em>
+        </h1>
+        <p class="lead" data-lang-th="สำหรับคนวัยทำงานที่อยากกลับมาเรียนต่อ อ.วิรศักดิ์และทีมแนะแนว มหาวิทยาลัยพิษณุโลก พร้อมออกแบบเส้นทางการศึกษาที่เข้ากับตารางชีวิตและเป้าหมายอาชีพของคุณ" data-lang-en="For working adults ready to return to the classroom. A. Wirasak and the Phitsanulok University guidance team design a study path that fits your schedule and career goals.">สำหรับคนวัยทำงานที่อยากกลับมาเรียนต่อ อ.วิรศักดิ์และทีมแนะแนว มหาวิทยาลัยพิษณุโลก พร้อมออกแบบเส้นทางการศึกษาที่เข้ากับตารางชีวิตและเป้าหมายอาชีพของคุณ</p>
+        <div class="hero-actions">
+          <a href="#contact" class="cta-btn" data-lang-th="จองเวลาปรึกษาฟรี" data-lang-en="Book a Free Session">จองเวลาปรึกษาฟรี</a>
+          <a href="#programs" class="cta-btn ghost" data-lang-th="ดูหลักสูตรทั้งหมด" data-lang-en="View All Programs">ดูหลักสูตรทั้งหมด</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-photo-frame">
+          <div class="platform-badge">
+            <span class="n">02</span>
+            <span class="l en">TRACK</span>
+          </div>
+          <img id="hero-img" src="https://images.unsplash.com/photo-1544168190-79c17527004f?w=760&h=900&fit=crop" alt="ผู้เรียนวัยทำงานที่กำลังวางแผนกลับมาศึกษาต่อ">
+          <div class="ticket-tag">
+            <div class="row"><span class="en">ORIGIN</span><span class="en">DEST.</span></div>
+            <div class="dest"><span data-lang-th="วัยทำงาน" data-lang-en="Working Life">วัยทำงาน</span> → <span data-lang-th="ปริญญาที่ใช้ได้จริง" data-lang-en="A Degree That Works">ปริญญาที่ใช้ได้จริง</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="en" data-lang-th="เปิดรับสมัครนักศึกษาวัยทำงาน ภาคเรียนที่ 2/2569" data-lang-en="ENROLLMENT OPEN — WORKING ADULT TERM 2/2026">เปิดรับสมัครนักศึกษาวัยทำงาน ภาคเรียนที่ 2/2569</span>
+      <span class="en" data-lang-th="เทียบโอนหน่วยกิตได้สูงสุด 70%" data-lang-en="TRANSFER UP TO 70% OF CREDITS">เทียบโอนหน่วยกิตได้สูงสุด 70%</span>
+      <span class="en" data-lang-th="เรียนเสาร์-อาทิตย์ หรือออนไลน์" data-lang-en="WEEKEND & ONLINE FORMATS AVAILABLE">เรียนเสาร์-อาทิตย์ หรือออนไลน์</span>
+      <span class="en" data-lang-th="ปรึกษาเส้นทางการศึกษาฟรี ไม่มีค่าใช้จ่าย" data-lang-en="FREE ACADEMIC PATH CONSULTATION">ปรึกษาเส้นทางการศึกษาฟรี ไม่มีค่าใช้จ่าย</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="stats-band">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal"><span class="num">22+</span><span class="lbl" data-lang-th="ปีประสบการณ์แนะแนวการศึกษา" data-lang-en="Years of guidance experience">ปีประสบการณ์แนะแนวการศึกษา</span></div>
+        <div class="stat-item reveal"><span class="num">1,540+</span><span class="lbl" data-lang-th="นักศึกษาวัยทำงานที่ผ่านการแนะแนว" data-lang-en="Working adults guided so far">นักศึกษาวัยทำงานที่ผ่านการแนะแนว</span></div>
+        <div class="stat-item reveal"><span class="num">12</span><span class="lbl" data-lang-th="หลักสูตรที่ยืดหยุ่นสำหรับวัยทำงาน" data-lang-en="Flexible programs for working adults">หลักสูตรที่ยืดหยุ่นสำหรับวัยทำงาน</span></div>
+        <div class="stat-item reveal"><span class="num">94%</span><span class="lbl" data-lang-th="อัตราความพึงพอใจของผู้เข้ารับคำปรึกษา" data-lang-en="Satisfaction rate among consultees">อัตราความพึงพอใจของผู้เข้ารับคำปรึกษา</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS / DEPARTURE BOARD -->
+  <section id="programs">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-kicker"><span class="en" data-lang-th="ตารางหลักสูตร" data-lang-en="PROGRAM DEPARTURES">ตารางหลักสูตร</span></div>
+        <h2 data-lang-th="เลือกชานชาลาการศึกษาของคุณ" data-lang-en="Choose Your Study Platform">เลือกชานชาลาการศึกษาของคุณ</h2>
+        <p data-lang-th="หลักสูตรทั้งหมดออกแบบมาให้เดินทางไปพร้อมกับงานประจำของคุณได้ เลือกเส้นทางที่ตรงกับเป้าหมายและเวลาที่คุณมี" data-lang-en="Every program is designed to travel alongside your day job. Choose the route that matches your goals and your schedule.">หลักสูตรทั้งหมดออกแบบมาให้เดินทางไปพร้อมกับงานประจำของคุณได้ เลือกเส้นทางที่ตรงกับเป้าหมายและเวลาที่คุณมี</p>
+      </div>
+      <div class="board reveal">
+        <div class="board-row">
+          <div class="board-track">01</div>
+          <div>
+            <div class="board-row-top">
+              <div class="board-name" data-lang-th="ปริญญาตรีต่อเนื่อง (เทียบโอน)" data-lang-en="Bachelor's Degree Completion">ปริญญาตรีต่อเนื่อง (เทียบโอน)</div>
+              <div class="board-status" data-lang-th="เปิดรับสมัคร" data-lang-en="BOARDING NOW">เปิดรับสมัคร</div>
+            </div>
+            <div class="board-meta">
+              <span data-lang-th="เรียนวันเสาร์-อาทิตย์" data-lang-en="Weekend classes">เรียนวันเสาร์-อาทิตย์</span>
+              <span data-lang-th="ระยะเวลา 2 ปี" data-lang-en="Duration: 2 years">ระยะเวลา 2 ปี</span>
+              <span data-lang-th="เทียบโอนได้สูงสุด 70%" data-lang-en="Up to 70% credit transfer">เทียบโอนได้สูงสุด 70%</span>
+            </div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div class="board-track">02</div>
+          <div>
+            <div class="board-row-top">
+              <div class="board-name" data-lang-th="ปริญญาโท บริหารธุรกิจ (ภาคพิเศษ)" data-lang-en="Master of Business Administration (Special)">ปริญญาโท บริหารธุรกิจ (ภาคพิเศษ)</div>
+              <div class="board-status" data-lang-th="ที่นั่งจำกัด" data-lang-en="LIMITED SEATS">ที่นั่งจำกัด</div>
+            </div>
+            <div class="board-meta">
+              <span data-lang-th="ออนไลน์ + เสาร์เช้า" data-lang-en="Online + Saturday mornings">ออนไลน์ + เสาร์เช้า</span>
+              <span data-lang-th="ระยะเวลา 1.5 ปี" data-lang-en="Duration: 1.5 years">ระยะเวลา 1.5 ปี</span>
+              <span data-lang-th="รับผู้มีประสบการณ์ทำงาน 2 ปีขึ้นไป" data-lang-en="2+ years work experience required">รับผู้มีประสบการณ์ทำงาน 2 ปีขึ้นไป</span>
+            </div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div class="board-track">03</div>
+          <div>
+            <div class="board-row-top">
+              <div class="board-name" data-lang-th="ประกาศนียบัตรวิชาชีพเฉพาะทาง" data-lang-en="Professional Specialist Certificate">ประกาศนียบัตรวิชาชีพเฉพาะทาง</div>
+              <div class="board-status" data-lang-th="เปิดรับสมัคร" data-lang-en="BOARDING NOW">เปิดรับสมัคร</div>
+            </div>
+            <div class="board-meta">
+              <span data-lang-th="เรียนภาคค่ำ" data-lang-en="Evening classes">เรียนภาคค่ำ</span>
+              <span data-lang-th="ระยะเวลา 6 เดือน" data-lang-en="Duration: 6 months">ระยะเวลา 6 เดือน</span>
+              <span data-lang-th="เน้นทักษะที่ใช้ได้จริงในงาน" data-lang-en="Focused on job-ready skills">เน้นทักษะที่ใช้ได้จริงในงาน</span>
+            </div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div class="board-track">04</div>
+          <div>
+            <div class="board-row-top">
+              <div class="board-name" data-lang-th="หลักสูตรออนไลน์เต็มรูปแบบ" data-lang-en="Fully Online Program">หลักสูตรออนไลน์เต็มรูปแบบ</div>
+              <div class="board-status" data-lang-th="เปิดรับตลอดปี" data-lang-en="OPEN YEAR-ROUND">เปิดรับตลอดปี</div>
+            </div>
+            <div class="board-meta">
+              <span data-lang-th="เรียนได้ทุกที่ทุกเวลา" data-lang-en="Study anywhere, anytime">เรียนได้ทุกที่ทุกเวลา</span>
+              <span data-lang-th="ระยะเวลายืดหยุ่น" data-lang-en="Flexible duration">ระยะเวลายืดหยุ่น</span>
+              <span data-lang-th="เหมาะกับผู้ที่เดินทางบ่อย" data-lang-en="Ideal for frequent travelers">เหมาะกับผู้ที่เดินทางบ่อย</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT COUNSELOR -->
+  <section id="about" style="background:var(--background)">
+    <div class="container about-row">
+      <div class="about-photo reveal">
+        <div class="frame-line"></div>
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&h=800&fit=crop" alt="อ.วิรศักดิ์ นักแนะแนวการศึกษา มหาวิทยาลัยพิษณุโลก">
+      </div>
+      <div class="reveal">
+        <div class="section-kicker"><span class="en" data-lang-th="ผู้ดูแลเส้นทางของคุณ" data-lang-en="YOUR PATH ADVISOR">ผู้ดูแลเส้นทางของคุณ</span></div>
+        <h2 data-lang-th="รู้จัก อ.วิรศักดิ์" data-lang-en="Meet A. Wirasak">รู้จัก อ.วิรศักดิ์</h2>
+        <p class="quote" data-lang-th="“ผมเชื่อว่าไม่มีคำว่าสายเกินไปสำหรับการเรียนรู้ งานของผมคือช่วยหาสถานีที่ใช่ ให้ทุกคนไปถึงจุดหมายได้จริง”" data-lang-en="“I believe it's never too late to learn. My job is to help you find the right station, so everyone can truly reach their destination.”">“ผมเชื่อว่าไม่มีคำว่าสายเกินไปสำหรับการเรียนรู้ งานของผมคือช่วยหาสถานีที่ใช่ ให้ทุกคนไปถึงจุดหมายได้จริง”</p>
+        <p data-lang-th="อ.วิรศักดิ์เป็นนักแนะแนวการศึกษาประจำมหาวิทยาลัยพิษณุโลก ทำงานร่วมกับนักศึกษาวัยทำงานมากว่า 22 ปี เชี่ยวชาญด้านการวางแผนเทียบโอนหน่วยกิต การเลือกหลักสูตรที่เหมาะกับสายอาชีพ และการจัดตารางเรียนให้สมดุลกับชีวิตการทำงาน" data-lang-en="A. Wirasak is the resident guidance counselor at Phitsanulok University, working with working-age students for over 22 years. He specializes in credit transfer planning, career-aligned program selection, and balancing study schedules with working life.">อ.วิรศักดิ์เป็นนักแนะแนวการศึกษาประจำมหาวิทยาลัยพิษณุโลก ทำงานร่วมกับนักศึกษาวัยทำงานมากว่า 22 ปี เชี่ยวชาญด้านการวางแผนเทียบโอนหน่วยกิต การเลือกหลักสูตรที่เหมาะกับสายอาชีพ และการจัดตารางเรียนให้สมดุลกับชีวิตการทำงาน</p>
+        <ul class="cred-list">
+          <li><i data-lucide="graduation-cap" width="18" height="18"></i><span data-lang-th="ปริญญาเอก การแนะแนวและจิตวิทยาการศึกษา" data-lang-en="Ph.D. in Educational Guidance and Psychology">ปริญญาเอก การแนะแนวและจิตวิทยาการศึกษา</span></li>
+          <li><i data-lucide="award" width="18" height="18"></i><span data-lang-th="นักแนะแนวดีเด่นระดับภาคเหนือ ปี 2565" data-lang-en="Northern Region Outstanding Counselor, 2022">นักแนะแนวดีเด่นระดับภาคเหนือ ปี 2565</span></li>
+          <li><i data-lucide="users" width="18" height="18"></i><span data-lang-th="ที่ปรึกษาด้านการศึกษาต่อขององค์กรกว่า 40 แห่ง" data-lang-en="Education advisor for over 40 organizations">ที่ปรึกษาด้านการศึกษาต่อขององค์กรกว่า 40 แห่ง</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section id="steps" style="background:var(--background)">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-kicker"><span class="en" data-lang-th="เส้นทางสู่การสมัคร" data-lang-en="THE ROUTE TO ENROLLMENT">เส้นทางสู่การสมัคร</span></div>
+        <h2 data-lang-th="สี่สถานีสู่การเรียนต่อ" data-lang-en="Four Stops to Enrollment">สี่สถานีสู่การเรียนต่อ</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step-num">01</span>
+          <div>
+            <h3 data-lang-th="ปรึกษาเส้นทาง" data-lang-en="Path Consultation">ปรึกษาเส้นทาง</h3>
+            <p data-lang-th="พูดคุยกับ อ.วิรศักดิ์เพื่อทำความเข้าใจเป้าหมายอาชีพและข้อจำกัดด้านเวลาของคุณ" data-lang-en="Talk with A. Wirasak to understand your career goals and time constraints.">พูดคุยกับ อ.วิรศักดิ์เพื่อทำความเข้าใจเป้าหมายอาชีพและข้อจำกัดด้านเวลาของคุณ</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">02</span>
+          <div>
+            <h3 data-lang-th="เลือกหลักสูตร" data-lang-en="Choose Program">เลือกหลักสูตร</h3>
+            <p data-lang-th="จับคู่คุณกับชานชาลาหลักสูตรที่เหมาะสมที่สุดตามเวลาและงบประมาณ" data-lang-en="Match you to the most suitable program platform based on time and budget.">จับคู่คุณกับชานชาลาหลักสูตรที่เหมาะสมที่สุดตามเวลาและงบประมาณ</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">03</span>
+          <div>
+            <h3 data-lang-th="เทียบโอนหน่วยกิต" data-lang-en="Credit Assessment">เทียบโอนหน่วยกิต</h3>
+            <p data-lang-th="ประเมินและเทียบโอนหน่วยกิตหรือประสบการณ์ทำงานเพื่อร่นระยะเวลาเรียน" data-lang-en="Assess and transfer academic credits or work experience to shorten study time.">ประเมินและเทียบโอนหน่วยกิตหรือประสบการณ์ทำงานเพื่อร่นระยะเวลาเรียน</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">04</span>
+          <div>
+            <h3 data-lang-th="เริ่มออกเดินทาง" data-lang-en="Departure Day">เริ่มออกเดินทาง</h3>
+            <p data-lang-th="ลงทะเบียนเรียนและเริ่มบทที่สองของการศึกษาอย่างมั่นใจ" data-lang-en="Enroll and begin the second chapter of your education with confidence.">ลงทะเบียนเรียนและเริ่มบทที่สองของการศึกษาอย่างมั่นใจ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section style="background:var(--background)">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-kicker"><span class="en" data-lang-th="เสียงจากผู้โดยสาร" data-lang-en="VOICES FROM THE PLATFORM">เสียงจากผู้โดยสาร</span></div>
+        <h2 data-lang-th="ผู้เรียนวัยทำงานที่ไปถึงจุดหมาย" data-lang-en="Working Adults Who Reached Their Destination">ผู้เรียนวัยทำงานที่ไปถึงจุดหมาย</h2>
+      </div>
+      <div class="test-scroll reveal">
+        <div class="test-card">
+          <div class="stars">★★★★★</div>
+          <p class="txt" data-lang-th="อ.วิรศักดิ์ช่วยวางแผนเทียบโอนหน่วยกิตให้ผมประหยัดเวลาไปเกือบปี ตารางเรียนวันเสาร์-อาทิตย์ก็ลงตัวกับงานประจำมาก" data-lang-en="A. Wirasak helped plan my credit transfer and saved me almost a year. The weekend schedule fit perfectly with my full-time job.">อ.วิรศักดิ์ช่วยวางแผนเทียบโอนหน่วยกิตให้ผมประหยัดเวลาไปเกือบปี ตารางเรียนวันเสาร์-อาทิตย์ก็ลงตัวกับงานประจำมาก</p>
+          <div class="test-person">
+            <img src="https://images.unsplash.com/photo-1600896903045-3d373014baa3?w=100&h=100&fit=crop" alt="ผู้เรียนวัยทำงาน">
+            <div><div class="name" data-lang-th="คุณธีรพงษ์ อินทร์แก้ว" data-lang-en="Theerapong Inkaew">คุณธีรพงษ์ อินทร์แก้ว</div><div class="role" data-lang-th="หัวหน้าฝ่ายผลิต, นักศึกษาปริญญาตรีต่อเนื่อง" data-lang-en="Production Supervisor, Degree Completion Student">หัวหน้าฝ่ายผลิต, นักศึกษาปริญญาตรีต่อเนื่อง</div></div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="stars">★★★★★</div>
+          <p class="txt" data-lang-th="ตอนแรกกังวลมากว่าอายุ 38 แล้วจะเรียนไหวไหม แต่ทีมแนะแนวดูแลใกล้ชิดทุกขั้นตอน จนตอนนี้เรียนโทเทอมสุดท้ายแล้วค่ะ" data-lang-en="I was worried at 38 whether I could still study, but the guidance team supported every step. Now I'm in my final term of my master's degree.">ตอนแรกกังวลมากว่าอายุ 38 แล้วจะเรียนไหวไหม แต่ทีมแนะแนวดูแลใกล้ชิดทุกขั้นตอน จนตอนนี้เรียนโทเทอมสุดท้ายแล้วค่ะ</p>
+          <div class="test-person">
+            <img src="https://images.unsplash.com/photo-1764103372936-a2c6aceb4233?w=100&h=100&fit=crop" alt="ผู้เรียนวัยทำงาน">
+            <div><div class="name" data-lang-th="คุณกัลยา ศรีสุข" data-lang-en="Kanlaya Srisuk">คุณกัลยา ศรีสุข</div><div class="role" data-lang-th="ผู้จัดการฝ่ายบุคคล, นักศึกษา MBA" data-lang-en="HR Manager, MBA Student">ผู้จัดการฝ่ายบุคคล, นักศึกษา MBA</div></div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="stars">★★★★★</div>
+          <p class="txt" data-lang-th="หลักสูตรออนไลน์ทำให้ผมเรียนได้ระหว่างเดินทางไปทำงานต่างจังหวัด ไม่พลาดทั้งงานและการเรียน" data-lang-en="The online program let me study while traveling for work — I didn't miss out on either my job or my studies.">หลักสูตรออนไลน์ทำให้ผมเรียนได้ระหว่างเดินทางไปทำงานต่างจังหวัด ไม่พลาดทั้งงานและการเรียน</p>
+          <div class="test-person">
+            <img src="https://images.unsplash.com/photo-1607544836359-7603ef1d3c4c?w=100&h=100&fit=crop" alt="ผู้เรียนวัยทำงาน">
+            <div><div class="name" data-lang-th="คุณอนุชิต บุญมา" data-lang-en="Anuchit Boonma">คุณอนุชิต บุญมา</div><div class="role" data-lang-th="วิศวกรภาคสนาม, หลักสูตรออนไลน์" data-lang-en="Field Engineer, Online Program">วิศวกรภาคสนาม, หลักสูตรออนไลน์</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:var(--background)">
+    <div class="container" style="max-width:820px">
+      <div class="section-head reveal">
+        <div class="section-kicker"><span class="en" data-lang-th="ก่อนออกเดินทาง" data-lang-en="BEFORE YOU BOARD">ก่อนออกเดินทาง</span></div>
+        <h2 data-lang-th="คำถามที่พบบ่อย" data-lang-en="Frequently Asked Questions">คำถามที่พบบ่อย</h2>
+      </div>
+      <div class="reveal">
+        <div class="faq-item">
+          <div class="faq-q"><span data-lang-th="ทำงานประจำอยู่แล้ว จะเรียนต่อไหวไหม?" data-lang-en="I already work full-time — can I still study?">ทำงานประจำอยู่แล้ว จะเรียนต่อไหวไหม?</span><i data-lucide="plus" width="20" height="20"></i></div>
+          <div class="faq-a"><p data-lang-th="ได้แน่นอน หลักสูตรของเราออกแบบมาสำหรับวัยทำงานโดยเฉพาะ มีทั้งรูปแบบเรียนวันเสาร์-อาทิตย์ ภาคค่ำ และออนไลน์เต็มรูปแบบ ให้เลือกตามตารางชีวิตของคุณ" data-lang-en="Absolutely. Our programs are designed specifically for working adults, with weekend, evening, and fully online formats to fit your schedule.">ได้แน่นอน หลักสูตรของเราออกแบบมาสำหรับวัยทำงานโดยเฉพาะ มีทั้งรูปแบบเรียนวันเสาร์-อาทิตย์ ภาคค่ำ และออนไลน์เต็มรูปแบบ ให้เลือกตามตารางชีวิตของคุณ</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span data-lang-th="เทียบโอนหน่วยกิตจากที่เดิมได้หรือไม่?" data-lang-en="Can I transfer credits from my previous institution?">เทียบโอนหน่วยกิตจากที่เดิมได้หรือไม่?</span><i data-lucide="plus" width="20" height="20"></i></div>
+          <div class="faq-a"><p data-lang-th="ได้ครับ เราประเมินหน่วยกิตเดิมและประสบการณ์ทำงานที่เกี่ยวข้อง สามารถเทียบโอนได้สูงสุดถึง 70% ของหลักสูตร ช่วยลดระยะเวลาเรียนได้มาก" data-lang-en="Yes. We assess previous credits and relevant work experience, allowing you to transfer up to 70% of the program, significantly reducing your study time.">ได้ครับ เราประเมินหน่วยกิตเดิมและประสบการณ์ทำงานที่เกี่ยวข้อง สามารถเทียบโอนได้สูงสุดถึง 70% ของหลักสูตร ช่วยลดระยะเวลาเรียนได้มาก</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span data-lang-th="มีทุนการศึกษาสำหรับคนวัยทำงานหรือไม่?" data-lang-en="Are there scholarships for working adults?">มีทุนการศึกษาสำหรับคนวัยทำงานหรือไม่?</span><i data-lucide="plus" width="20" height="20"></i></div>
+          <div class="faq-a"><p data-lang-th="มีทุนส่วนลดค่าเล่าเรียนสำหรับพนักงานองค์กรคู่สัญญา และทุนผ่อนชำระรายเดือนแบบไม่มีดอกเบี้ย สอบถามรายละเอียดกับทีมแนะแนวได้โดยตรง" data-lang-en="We offer tuition discounts for partner-organization employees and interest-free monthly installment plans. Contact our guidance team for details.">มีทุนส่วนลดค่าเล่าเรียนสำหรับพนักงานองค์กรคู่สัญญา และทุนผ่อนชำระรายเดือนแบบไม่มีดอกเบี้ย สอบถามรายละเอียดกับทีมแนะแนวได้โดยตรง</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span data-lang-th="การปรึกษากับ อ.วิรศักดิ์มีค่าใช้จ่ายหรือไม่?" data-lang-en="Is the consultation with A. Wirasak free of charge?">การปรึกษากับ อ.วิรศักดิ์มีค่าใช้จ่ายหรือไม่?</span><i data-lucide="plus" width="20" height="20"></i></div>
+          <div class="faq-a"><p data-lang-th="ไม่มีค่าใช้จ่ายใดๆ ทั้งสิ้น การปรึกษาเส้นทางการศึกษาเป็นบริการฟรีจากมหาวิทยาลัยพิษณุโลกสำหรับผู้สนใจทุกท่าน" data-lang-en="No cost at all. Academic path consultations are a free service from Phitsanulok University for all interested individuals.">ไม่มีค่าใช้จ่ายใดๆ ทั้งสิ้น การปรึกษาเส้นทางการศึกษาเป็นบริการฟรีจากมหาวิทยาลัยพิษณุโลกสำหรับผู้สนใจทุกท่าน</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="container contact-grid">
+      <div class="reveal">
+        <div class="section-kicker" style="color:#fff"><span class="en" data-lang-th="สถานีปลายทาง" data-lang-en="FINAL DESTINATION">สถานีปลายทาง</span></div>
+        <h2 style="color:#fff" data-lang-th="พร้อมออกเดินทางแล้วหรือยัง?" data-lang-en="Ready to Depart?">พร้อมออกเดินทางแล้วหรือยัง?</h2>
+        <p style="color:#C6D5E8;margin-top:16px;max-width:44ch" data-lang-th="ทักหาทีมแนะแนวของ อ.วิรศักดิ์ได้ทุกวันทำการ นัดหมายปรึกษาแบบตัวต่อตัวหรือออนไลน์ ไม่มีค่าใช้จ่าย" data-lang-en="Reach A. Wirasak's guidance team any business day. Book a one-on-one or online consultation, free of charge.">ทักหาทีมแนะแนวของ อ.วิรศักดิ์ได้ทุกวันทำการ นัดหมายปรึกษาแบบตัวต่อตัวหรือออนไลน์ ไม่มีค่าใช้จ่าย</p>
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <div class="ic"><i data-lucide="map-pin" width="18" height="18"></i></div>
+            <div><div class="t en" data-lang-th="ที่ตั้งสำนักงาน" data-lang-en="OFFICE">ที่ตั้งสำนักงาน</div><div class="v" data-lang-th="อาคารแนะแนว ชั้น 2 มหาวิทยาลัยพิษณุโลก ถ.สิงหวัฒน์ อ.เมือง จ.พิษณุโลก" data-lang-en="Guidance Building, 2nd Fl., Phitsanulok University, Singhawat Rd., Phitsanulok">อาคารแนะแนว ชั้น 2 มหาวิทยาลัยพิษณุโลก ถ.สิงหวัฒน์ อ.เมือง จ.พิษณุโลก</div></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ic"><i data-lucide="phone" width="18" height="18"></i></div>
+            <div><div class="t en" data-lang-th="โทรศัพท์" data-lang-en="PHONE">โทรศัพท์</div><div class="v">055-123-456 · 08X-XXX-XXXX</div></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ic"><i data-lucide="clock" width="18" height="18"></i></div>
+            <div><div class="t en" data-lang-th="เวลาทำการ" data-lang-en="HOURS">เวลาทำการ</div><div class="v" data-lang-th="จันทร์–เสาร์ 08:30–18:00 น." data-lang-en="Mon–Sat, 08:30–18:00">จันทร์–เสาร์ 08:30–18:00 น.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <h3 data-lang-th="นัดหมายปรึกษาเส้นทางการศึกษา" data-lang-en="Book Your Path Consultation">นัดหมายปรึกษาเส้นทางการศึกษา</h3>
+        <p data-lang-th="กรอกข้อมูลด้านล่าง ทีมงานจะติดต่อกลับภายใน 1 วันทำการ" data-lang-en="Fill in the form below and our team will contact you within one business day.">กรอกข้อมูลด้านล่าง ทีมงานจะติดต่อกลับภายใน 1 วันทำการ</p>
+        <form onsubmit="event.preventDefault();alert(document.documentElement.lang==='th'?'ขอบคุณครับ ทีมงานจะติดต่อกลับเร็วๆ นี้':'Thank you — our team will contact you soon.')">
+          <div class="form-row"><label data-lang-th="ชื่อ-นามสกุล" data-lang-en="Full Name">ชื่อ-นามสกุล</label><input type="text" required placeholder="เช่น สมชาย ใจดี"></div>
+          <div class="form-row"><label data-lang-th="เบอร์โทรศัพท์" data-lang-en="Phone Number">เบอร์โทรศัพท์</label><input type="tel" required placeholder="08X-XXX-XXXX"></div>
+          <div class="form-row">
+            <label data-lang-th="สนใจหลักสูตร" data-lang-en="Program of Interest">สนใจหลักสูตร</label>
+            <select>
+              <option data-lang-th="ปริญญาตรีต่อเนื่อง" data-lang-en="Bachelor's Completion">ปริญญาตรีต่อเนื่อง</option>
+              <option data-lang-th="ปริญญาโท บริหารธุรกิจ" data-lang-en="MBA">ปริญญาโท บริหารธุรกิจ</option>
+              <option data-lang-th="ประกาศนียบัตรวิชาชีพ" data-lang-en="Professional Certificate">ประกาศนียบัตรวิชาชีพ</option>
+              <option data-lang-th="หลักสูตรออนไลน์" data-lang-en="Online Program">หลักสูตรออนไลน์</option>
+            </select>
+          </div>
+          <button type="submit" class="cta-btn" data-lang-th="ส่งคำขอนัดหมาย" data-lang-en="Send Request">ส่งคำขอนัดหมาย</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 style="font-family:var(--font-heading)">อ.วิรศักดิ์</h4>
+        <p style="color:#B7C6DB;font-size:0.88rem;max-width:32ch" data-lang-th="แนะแนวการศึกษาต่อสำหรับนักศึกษาวัยทำงาน มหาวิทยาลัยพิษณุโลก" data-lang-en="Continuing education guidance for working adults, Phitsanulok University.">แนะแนวการศึกษาต่อสำหรับนักศึกษาวัยทำงาน มหาวิทยาลัยพิษณุโลก</p>
+        <div class="socials" style="margin-top:20px">
+          <a href="#"><i data-lucide="facebook" width="16" height="16"></i></a>
+          <a href="#"><i data-lucide="instagram" width="16" height="16"></i></a>
+          <a href="#"><i data-lucide="youtube" width="16" height="16"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-lang-th="หลักสูตร" data-lang-en="Programs">หลักสูตร</h4>
+        <a href="#programs" data-lang-th="ปริญญาตรีต่อเนื่อง" data-lang-en="Bachelor's Completion">ปริญญาตรีต่อเนื่อง</a>
+        <a href="#programs" data-lang-th="ปริญญาโท บริหารธุรกิจ" data-lang-en="MBA">ปริญญาโท บริหารธุรกิจ</a>
+        <a href="#programs" data-lang-th="ประกาศนียบัตรวิชาชีพ" data-lang-en="Professional Certificate">ประกาศนียบัตรวิชาชีพ</a>
+        <a href="#programs" data-lang-th="หลักสูตรออนไลน์" data-lang-en="Online Program">หลักสูตรออนไลน์</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-lang-th="ลิงก์" data-lang-en="Links">ลิงก์</h4>
+        <a href="#about" data-lang-th="เกี่ยวกับผม" data-lang-en="About Me">เกี่ยวกับผม</a>
+        <a href="#steps" data-lang-th="ขั้นตอนสมัคร" data-lang-en="Process">ขั้นตอนสมัคร</a>
+        <a href="#faq" data-lang-th="คำถามที่พบบ่อย" data-lang-en="FAQ">คำถามที่พบบ่อย</a>
+        <a href="#contact" data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-lang-th="ติดต่อ" data-lang-en="Contact">ติดต่อ</h4>
+        <a href="tel:055123456">055-123-456</a>
+        <a href="#" data-lang-th="อาคารแนะแนว ม.พิษณุโลก" data-lang-en="Guidance Bldg., Phitsanulok Univ.">อาคารแนะแนว ม.พิษณุโลก</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-lang-th="© 2569 อ.วิรศักดิ์ แนะแนวการศึกษา มหาวิทยาลัยพิษณุโลก สงวนลิขสิทธิ์" data-lang-en="© 2026 A. Wirasak Guidance, Phitsanulok University. All rights reserved.">© 2569 อ.วิรศักดิ์ แนะแนวการศึกษา มหาวิทยาลัยพิษณุโลก สงวนลิขสิทธิ์</span>
+      <span class="en">TEL. 055-123-456</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // header shrink on scroll
+  var header = document.getElementById('site-header');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 24){ header.classList.add('scrolled'); }
+    else { header.classList.remove('scrolled'); }
+  });
+
+  // mobile menu
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', function(){
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a){
+    a.addEventListener('click', function(){
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  // reveal on scroll
+  var revealEls = document.querySelectorAll('.reveal, .step');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, {threshold:0.15});
+  revealEls.forEach(function(el){ io.observe(el); });
+
+  // faq accordion
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    q.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(other){
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 40 + 'px';
+      }
+    });
+  });
+
+  lucide.createIcons();
+</script>
+
+<script>
+(function(){var K='site-lang',L=localStorage.getItem(K)||'th';function S(l){L=l;localStorage.setItem(K,l);document.documentElement.lang=l;document.querySelectorAll('[data-lang-th]').forEach(function(e){var t=e.getAttribute('data-lang-'+l);if(t!==null){if(/[<&]/.test(t)){e.innerHTML=t}else{e.textContent=t}}});var lb=document.querySelector('.lang-sw__label');if(lb){lb.textContent=l.toUpperCase()}}var sw=document.querySelector('.lang-sw');if(sw){sw.addEventListener('click',function(){S(L==='th'?'en':'th')});sw.style.cursor='pointer'}if(L!=='th'){S(L)}})();
+</script>
+
+</body>
+</html>
